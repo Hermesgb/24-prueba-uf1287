@@ -3,11 +3,13 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-    var sumando1 = Number(req.query.sumando1)
-    var sumando2 = Number(req.query.sumando2)
-    var multiplicacion = sumando1 * sumando2
-    var multiplicaString = multiplicacion.toString()
-    res.send(multiplicaString)
+    var a = Number(req.query.a)
+    var array = []
+    for (i = 1; i <= a; i++){
+        array.push(i)
+    }
+    var arrayString = array.toString()
+    res.send('[' + arrayString + ']')
 })
 
 app.listen(port, () => {
